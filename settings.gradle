@@ -7,7 +7,7 @@ pluginManagement {
 }
 
 plugins {
-    id 'net.neoforged.gradle.userdev' version '7.0.174'
+    id 'net.neoforged.gradle.userdev' version '7.0.180'
 }
 
 rootProject.name = "minis-bot-mod"
