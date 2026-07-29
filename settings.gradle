@@ -2,8 +2,15 @@ pluginManagement {
     repositories {
         mavenLocal()
         gradlePluginPortal()
-        maven { url = 'https://maven.neoforged.net/releases/' }
+        maven {
+            name = 'NeoForged'
+            url = 'https://maven.neoforged.net/releases/'
+        }
     }
 }
 
-rootProject.name = 'minis-bot-mod'
+plugins {
+    id 'net.neoforged.gradle.userdev' version '7.0.174'
+}
+
+rootProject.name = "minis-bot-mod"
