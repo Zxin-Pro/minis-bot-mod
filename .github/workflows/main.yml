@@ -19,9 +19,8 @@ jobs:
         run: |
           wget -q "https://services.gradle.org/distributions/gradle-8.10-bin.zip" -O /tmp/gradle.zip
           unzip -q /tmp/gradle.zip -d /opt
-          echo "/opt/gradle-8.10/bin" >> $GITHUB_PATH
       - name: Build with Gradle
-        run: gradle build
+        run: /opt/gradle-8.10/bin/gradle build
       - name: Upload jar
         uses: actions/upload-artifact@v4
         with:
