@@ -1,6 +1,5 @@
 plugins {
     id 'java-library'
-    id 'net.neoforged.gradle.userdev' version '7.0.171'
 }
 
 base {
@@ -9,14 +8,24 @@ base {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-neoForge {
-    version = "21.1.112"
-    runs {
-        server { server() }
+repositories {
+    mavenCentral()
+    maven {
+        url = "https://maven.neoforged.net/releases/"
     }
-    mods {
-        minisbot {
-            sourceSet sourceSets.main
-        }
+}
+
+dependencies {
+    implementation "net.neoforged:neoforge:21.1.112"
+}
+
+tasks.named('jar', Jar) {
+    manifest {
+        attributes([
+            "Specification-Title": "minis-bot-mod",
+            "Specification-Version": "1",
+            "Implementation-Title": "Minis Bot Mod",
+            "Implementation-Version": "1.0.0"
+        ])
     }
 }
