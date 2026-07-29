@@ -15,10 +15,13 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-      - name: Grant execute permission
-        run: chmod +x gradlew
+      - name: Install Gradle
+        run: |
+          curl -sL "https://services.gradle.org/distributions/gradle-8.10-bin.zip" -o /tmp/gradle.zip
+          unzip -q /tmp/gradle.zip -d /opt
+          echo "/opt/gradle-8.10/bin" >> $GITHUB_PATH
       - name: Build with Gradle
-        run: ./gradlew build
+        run: gradle build
       - name: Upload jar
         uses: actions/upload-artifact@v4
         with:
