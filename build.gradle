@@ -11,40 +11,12 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 neoForge {
     version = "21.1.112"
-
     runs {
-        configureEach {
-            systemProperty 'forge.logging.markers', 'REGISTRIES'
-            systemProperty 'forge.logging.console.level', 'debug'
-        }
-        server {
-            server()
-        }
+        server { server() }
     }
-
     mods {
         minisbot {
             sourceSet sourceSets.main
         }
-    }
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-}
-
-tasks.named('jar', Jar).configure {
-    manifest {
-        attributes([
-                "Specification-Title"     : "minis-bot-mod",
-                "Specification-Vendor"    : "minis",
-                "Specification-Version"   : "1",
-                "Implementation-Title"    : project.name,
-                "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "minis",
-        ])
     }
 }
