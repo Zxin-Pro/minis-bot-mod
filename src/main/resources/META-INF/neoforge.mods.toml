@@ -1,0 +1,29 @@
+{
+    "modLoader": "neoforge",
+    "loaderVersion": {
+        "range": "[[4,)]"
+    },
+    "license": "MIT",
+    "name": "Minis Bot Mod",
+    "description": "一个像真人玩家的AI机器人模组，能下矿、种树、砍树，支持QQ远程控制\n§c仅需服务端安装",
+    "version": "${mod_version}",
+    "id": "minis_bot_mod",
+    "authors": [
+        {
+            "name": "Minis"
+        }
+    ],
+    "logoFile": "",
+    "dependencies": {
+        "neoforge": {
+            "versionRange": "[21.1,21.2)",
+            "ordering": "NONE",
+            "side": "BOTH"
+        },
+        "minecraft": {
+            "versionRange": "[1.21.1,1.21.2)",
+            "ordering": "NONE",
+            "side": "BOTH"
+        }
+    }
+}
