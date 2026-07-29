@@ -1,6 +1,5 @@
 plugins {
     id 'java-library'
-    id 'net.neoforged.gradle.userdev' version '7.0.171'
 }
 
 base {
@@ -9,11 +8,9 @@ base {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-// neoForge 版本
 neoForge {
     version = project.neo_version
 
-    // 运行时模组依赖
     runs {
         configureEach {
             systemProperty 'forge.logging.markers', 'REGISTRIES'
@@ -40,7 +37,6 @@ repositories {
 }
 
 dependencies {
-    // 无额外依赖
 }
 
 tasks.named('jar', Jar).configure {
