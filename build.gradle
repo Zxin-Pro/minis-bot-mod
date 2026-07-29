@@ -1,16 +1,16 @@
 plugins {
     id 'java-library'
-    id 'net.neoforged.gradle.userdev' version '7.0.171'
+    id 'net.neoforged.gradle.userdev' version '7.0.174'
 }
 
 base {
-    archivesName = 'minis-bot-mod'
+    archivesName = "minis-bot-mod"
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 neoForge {
-    version = project.neo_version
+    version = "21.1.112"
 
     runs {
         configureEach {
@@ -30,7 +30,6 @@ neoForge {
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
 }
 
